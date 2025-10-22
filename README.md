@@ -46,7 +46,7 @@ npm run dev
 
 ## ⚠️ Important Safety Notice
 
-**ETHICAL USE ONLY**: These tools are designed for educational purposes and authorized penetration testing only. 
+**ETHICAL USE ONLY**: These tools are designed for educational purposes and authorized penetration testing only.
 
 **Requirements:**
 - You MUST have explicit written permission to test the target website
@@ -82,10 +82,13 @@ Both tools are configured to test:
 
 Both implementations maintain feature parity and produce equivalent results.
 
-# Brute Force Attack Explained
+---
+
+# Understanding Brute Force Attacks
 
 ## Overview
-This document illustrates how brute force attacks work - a systematic trial-and-error method used to decode encrypted data or gain unauthorized access by attempting all possible combinations.
+
+This section explains how brute force attacks work - a systematic trial-and-error method used to decode encrypted data or gain unauthorized access by attempting all possible combinations.
 
 ## Attack Flow Architecture
 
@@ -111,18 +114,18 @@ graph TD
     
     K --> L[System Compromised]
     
-    style A fill:#2c3e50,stroke:#34495e,stroke-width:2px,color:#fff
-    style D fill:#e74c3c,stroke:#c0392b,stroke-width:2px,color:#fff
-    style K fill:#27ae60,stroke:#229954,stroke-width:2px,color:#fff
-    style L fill:#c0392b,stroke:#a93226,stroke-width:2px,color:#fff
-    style E fill:#3498db,stroke:#2980b9,stroke-width:2px,color:#fff
-    style B fill:#95a5a6,stroke:#7f8c8d,stroke-width:2px,color:#fff
-    style C fill:#95a5a6,stroke:#7f8c8d,stroke-width:2px,color:#fff
-    style F fill:#f39c12,stroke:#e67e22,stroke-width:2px,color:#fff
-    style G fill:#f39c12,stroke:#e67e22,stroke-width:2px,color:#fff
-    style H fill:#f39c12,stroke:#e67e22,stroke-width:2px,color:#fff
-    style I fill:#f39c12,stroke:#e67e22,stroke-width:2px,color:#fff
-    style J fill:#f39c12,stroke:#e67e22,stroke-width:2px,color:#fff
+    style A fill:#34495e,stroke:#2c3e50,stroke-width:2px,color:#fff
+    style D fill:#c0392b,stroke:#a93226,stroke-width:2px,color:#fff
+    style K fill:#27ae60,stroke:#1e8449,stroke-width:2px,color:#fff
+    style L fill:#e74c3c,stroke:#c0392b,stroke-width:2px,color:#fff
+    style E fill:#2980b9,stroke:#1f618d,stroke-width:2px,color:#fff
+    style B fill:#7f8c8d,stroke:#5d6d7e,stroke-width:2px,color:#fff
+    style C fill:#7f8c8d,stroke:#5d6d7e,stroke-width:2px,color:#fff
+    style F fill:#d68910,stroke:#b9770e,stroke-width:2px,color:#fff
+    style G fill:#d68910,stroke:#b9770e,stroke-width:2px,color:#fff
+    style H fill:#d68910,stroke:#b9770e,stroke-width:2px,color:#fff
+    style I fill:#d68910,stroke:#b9770e,stroke-width:2px,color:#fff
+    style J fill:#d68910,stroke:#b9770e,stroke-width:2px,color:#fff
 ```
 
 ## How Brute Force Attacks Work
@@ -182,19 +185,19 @@ graph LR
     D --> D2[Distributed IPs]
     D --> D3[Hardest to Block]
     
-    style A fill:#2c3e50,stroke:#34495e,stroke-width:3px,color:#fff
-    style B fill:#3498db,stroke:#2980b9,stroke-width:2px,color:#fff
-    style C fill:#e67e22,stroke:#d35400,stroke-width:2px,color:#fff
-    style D fill:#e74c3c,stroke:#c0392b,stroke-width:2px,color:#fff
-    style B1 fill:#5dade2,stroke:#3498db,stroke-width:1px,color:#fff
-    style B2 fill:#5dade2,stroke:#3498db,stroke-width:1px,color:#fff
-    style B3 fill:#5dade2,stroke:#3498db,stroke-width:1px,color:#fff
-    style C1 fill:#f39c12,stroke:#e67e22,stroke-width:1px,color:#fff
-    style C2 fill:#f39c12,stroke:#e67e22,stroke-width:1px,color:#fff
-    style C3 fill:#f39c12,stroke:#e67e22,stroke-width:1px,color:#fff
-    style D1 fill:#ec7063,stroke:#e74c3c,stroke-width:1px,color:#fff
-    style D2 fill:#ec7063,stroke:#e74c3c,stroke-width:1px,color:#fff
-    style D3 fill:#ec7063,stroke:#e74c3c,stroke-width:1px,color:#fff
+    style A fill:#2c3e50,stroke:#1a252f,stroke-width:3px,color:#fff
+    style B fill:#2980b9,stroke:#1f618d,stroke-width:2px,color:#fff
+    style C fill:#d68910,stroke:#b9770e,stroke-width:2px,color:#fff
+    style D fill:#c0392b,stroke:#a93226,stroke-width:2px,color:#fff
+    style B1 fill:#3498db,stroke:#2980b9,stroke-width:1px,color:#fff
+    style B2 fill:#3498db,stroke:#2980b9,stroke-width:1px,color:#fff
+    style B3 fill:#3498db,stroke:#2980b9,stroke-width:1px,color:#fff
+    style C1 fill:#f39c12,stroke:#d68910,stroke-width:1px,color:#fff
+    style C2 fill:#f39c12,stroke:#d68910,stroke-width:1px,color:#fff
+    style C3 fill:#f39c12,stroke:#d68910,stroke-width:1px,color:#fff
+    style D1 fill:#e74c3c,stroke:#c0392b,stroke-width:1px,color:#fff
+    style D2 fill:#e74c3c,stroke:#c0392b,stroke-width:1px,color:#fff
+    style D3 fill:#e74c3c,stroke:#c0392b,stroke-width:1px,color:#fff
 ```
 
 ## Defense Mechanisms
@@ -213,32 +216,63 @@ graph LR
 ## Attack Type Taxonomy
 
 ```mermaid
-mindmap
-  root((Brute Force<br/>Attack Types))
-    Simple Brute Force
-      Exhaustive search
-      No prior knowledge
-      All combinations
-    Dictionary Attack
-      Common passwords
-      Wordlist based
-      Language patterns
-    Hybrid Attack
-      Dictionary + rules
-      Character substitution
-      Pattern mutations
-    Rainbow Table
-      Precomputed hashes
-      Fast lookups
-      Storage intensive
-    Credential Stuffing
-      Leaked databases
-      Cross-site testing
-      High success rate
-    Reverse Brute Force
-      Fixed password
-      Multiple usernames
-      Organizational targets
+graph TB
+    A[Brute Force Attack Types] --> B[Simple Brute Force]
+    A --> C[Dictionary Attack]
+    A --> D[Hybrid Attack]
+    A --> E[Rainbow Table]
+    A --> F[Credential Stuffing]
+    A --> G[Reverse Brute Force]
+    
+    B --> B1[Exhaustive search]
+    B --> B2[No prior knowledge]
+    B --> B3[All combinations]
+    
+    C --> C1[Common passwords]
+    C --> C2[Wordlist based]
+    C --> C3[Language patterns]
+    
+    D --> D1[Dictionary rules]
+    D --> D2[Character substitution]
+    D --> D3[Pattern mutations]
+    
+    E --> E1[Precomputed hashes]
+    E --> E2[Fast lookups]
+    E --> E3[Storage intensive]
+    
+    F --> F1[Leaked databases]
+    F --> F2[Cross site testing]
+    F --> F3[High success rate]
+    
+    G --> G1[Fixed password]
+    G --> G2[Multiple usernames]
+    G --> G3[Organizational targets]
+    
+    style A fill:#2c3e50,stroke:#1a252f,stroke-width:3px,color:#fff
+    style B fill:#e74c3c,stroke:#c0392b,stroke-width:2px,color:#fff
+    style C fill:#3498db,stroke:#2980b9,stroke-width:2px,color:#fff
+    style D fill:#9b59b6,stroke:#8e44ad,stroke-width:2px,color:#fff
+    style E fill:#f39c12,stroke:#d68910,stroke-width:2px,color:#fff
+    style F fill:#1abc9c,stroke:#16a085,stroke-width:2px,color:#fff
+    style G fill:#e67e22,stroke:#d35400,stroke-width:2px,color:#fff
+    style B1 fill:#ec7063,stroke:#e74c3c,stroke-width:1px,color:#fff
+    style B2 fill:#ec7063,stroke:#e74c3c,stroke-width:1px,color:#fff
+    style B3 fill:#ec7063,stroke:#e74c3c,stroke-width:1px,color:#fff
+    style C1 fill:#5dade2,stroke:#3498db,stroke-width:1px,color:#fff
+    style C2 fill:#5dade2,stroke:#3498db,stroke-width:1px,color:#fff
+    style C3 fill:#5dade2,stroke:#3498db,stroke-width:1px,color:#fff
+    style D1 fill:#af7ac5,stroke:#9b59b6,stroke-width:1px,color:#fff
+    style D2 fill:#af7ac5,stroke:#9b59b6,stroke-width:1px,color:#fff
+    style D3 fill:#af7ac5,stroke:#9b59b6,stroke-width:1px,color:#fff
+    style E1 fill:#f5b041,stroke:#f39c12,stroke-width:1px,color:#fff
+    style E2 fill:#f5b041,stroke:#f39c12,stroke-width:1px,color:#fff
+    style E3 fill:#f5b041,stroke:#f39c12,stroke-width:1px,color:#fff
+    style F1 fill:#48c9b0,stroke:#1abc9c,stroke-width:1px,color:#fff
+    style F2 fill:#48c9b0,stroke:#1abc9c,stroke-width:1px,color:#fff
+    style F3 fill:#48c9b0,stroke:#1abc9c,stroke-width:1px,color:#fff
+    style G1 fill:#eb984e,stroke:#e67e22,stroke-width:1px,color:#fff
+    style G2 fill:#eb984e,stroke:#e67e22,stroke-width:1px,color:#fff
+    style G3 fill:#eb984e,stroke:#e67e22,stroke-width:1px,color:#fff
 ```
 
 ## Complexity Analysis
@@ -256,65 +290,59 @@ mindmap
 
 **Note:** Times assume 1,000 attempts per second. Modern hardware and distributed systems can achieve much higher rates.
 
-## Project Architecture
+## Project Architecture Diagram
 
 ```mermaid
 graph TB
-    subgraph Project Structure
-        A[Credential Tester Project]
-        A --> B[Python Implementation]
-        A --> C[Node.js/TypeScript Implementation]
-        
-        B --> B1[main.py]
-        B --> B2[Requirements]
-        B --> B3[Session Management]
-        
-        C --> C1[main.ts]
-        C --> C2[Package Dependencies]
-        C --> C3[Type Safety]
-    end
+    A[Credential Tester Project]
     
-    subgraph Core Features
-        D[Features]
-        D --> D1[Rate Limiting]
-        D --> D2[Retry Logic]
-        D --> D3[Progress Tracking]
-        D --> D4[Auto-Start]
-        D --> D5[Early Termination]
-    end
+    A --> B[Python Implementation]
+    A --> C[Node.js TypeScript Implementation]
     
-    subgraph Target Configuration
-        E[Testing Parameters]
-        E --> E1[User ID: 10 digits]
-        E --> E2[Password: 5 digits]
-        E --> E3[89B combinations]
-        E --> E4[~208 days duration]
-    end
+    B --> B1[main.py<br/>Main Python Script]
+    B --> B2[Requirements<br/>requests + beautifulsoup4]
+    B --> B3[Session Management<br/>Cookie Handling]
     
-    B1 -.-> D
-    C1 -.-> D
-    D -.-> E
+    C --> C1[main.ts<br/>Main TypeScript Source]
+    C --> C2[Dependencies<br/>axios + cheerio]
+    C --> C3[Type Safety<br/>TypeScript Features]
     
-    style A fill:#2c3e50,stroke:#34495e,stroke-width:3px,color:#fff
-    style B fill:#3498db,stroke:#2980b9,stroke-width:2px,color:#fff
-    style C fill:#27ae60,stroke:#229954,stroke-width:2px,color:#fff
-    style D fill:#9b59b6,stroke:#8e44ad,stroke-width:2px,color:#fff
-    style E fill:#e67e22,stroke:#d35400,stroke-width:2px,color:#fff
-    style B1 fill:#5dade2,stroke:#3498db,stroke-width:1px,color:#333
-    style B2 fill:#5dade2,stroke:#3498db,stroke-width:1px,color:#333
-    style B3 fill:#5dade2,stroke:#3498db,stroke-width:1px,color:#333
-    style C1 fill:#52be80,stroke:#27ae60,stroke-width:1px,color:#333
-    style C2 fill:#52be80,stroke:#27ae60,stroke-width:1px,color:#333
-    style C3 fill:#52be80,stroke:#27ae60,stroke-width:1px,color:#333
-    style D1 fill:#bb8fce,stroke:#9b59b6,stroke-width:1px,color:#333
-    style D2 fill:#bb8fce,stroke:#9b59b6,stroke-width:1px,color:#333
-    style D3 fill:#bb8fce,stroke:#9b59b6,stroke-width:1px,color:#333
-    style D4 fill:#bb8fce,stroke:#9b59b6,stroke-width:1px,color:#333
-    style D5 fill:#bb8fce,stroke:#9b59b6,stroke-width:1px,color:#333
-    style E1 fill:#f39c12,stroke:#e67e22,stroke-width:1px,color:#333
-    style E2 fill:#f39c12,stroke:#e67e22,stroke-width:1px,color:#333
-    style E3 fill:#f39c12,stroke:#e67e22,stroke-width:1px,color:#333
-    style E4 fill:#f39c12,stroke:#e67e22,stroke-width:1px,color:#333
+    B1 --> D[Core Features]
+    C1 --> D
+    
+    D --> D1[Rate Limiting<br/>Respects Server Resources]
+    D --> D2[Retry Logic<br/>Handles Network Errors]
+    D --> D3[Progress Tracking<br/>Real-time Statistics]
+    D --> D4[Auto-Start<br/>3-Second Delay]
+    D --> D5[Early Termination<br/>Stops After 5 Credentials]
+    
+    D --> E[Testing Parameters]
+    
+    E --> E1[User ID Range<br/>10-digit numbers<br/>1000000000-9999999999]
+    E --> E2[Password Range<br/>5-digit numbers<br/>11111-99999]
+    E --> E3[Total Combinations<br/>89 Billion Attempts]
+    E --> E4[Estimated Duration<br/>208 Days @ 0.2s/request]
+    
+    style A fill:#2c3e50,stroke:#1a252f,stroke-width:4px,color:#fff,padding:20px
+    style B fill:#2980b9,stroke:#1f618d,stroke-width:3px,color:#fff,padding:15px
+    style C fill:#27ae60,stroke:#1e8449,stroke-width:3px,color:#fff,padding:15px
+    style D fill:#8e44ad,stroke:#6c3483,stroke-width:3px,color:#fff,padding:15px
+    style E fill:#d68910,stroke:#b9770e,stroke-width:3px,color:#fff,padding:15px
+    style B1 fill:#3498db,stroke:#2980b9,stroke-width:2px,color:#fff,padding:12px
+    style B2 fill:#3498db,stroke:#2980b9,stroke-width:2px,color:#fff,padding:12px
+    style B3 fill:#3498db,stroke:#2980b9,stroke-width:2px,color:#fff,padding:12px
+    style C1 fill:#2ecc71,stroke:#27ae60,stroke-width:2px,color:#fff,padding:12px
+    style C2 fill:#2ecc71,stroke:#27ae60,stroke-width:2px,color:#fff,padding:12px
+    style C3 fill:#2ecc71,stroke:#27ae60,stroke-width:2px,color:#fff,padding:12px
+    style D1 fill:#9b59b6,stroke:#8e44ad,stroke-width:2px,color:#fff,padding:12px
+    style D2 fill:#9b59b6,stroke:#8e44ad,stroke-width:2px,color:#fff,padding:12px
+    style D3 fill:#9b59b6,stroke:#8e44ad,stroke-width:2px,color:#fff,padding:12px
+    style D4 fill:#9b59b6,stroke:#8e44ad,stroke-width:2px,color:#fff,padding:12px
+    style D5 fill:#9b59b6,stroke:#8e44ad,stroke-width:2px,color:#fff,padding:12px
+    style E1 fill:#f39c12,stroke:#d68910,stroke-width:2px,color:#fff,padding:12px
+    style E2 fill:#f39c12,stroke:#d68910,stroke-width:2px,color:#fff,padding:12px
+    style E3 fill:#f39c12,stroke:#d68910,stroke-width:2px,color:#fff,padding:12px
+    style E4 fill:#f39c12,stroke:#d68910,stroke-width:2px,color:#fff,padding:12px
 ```
 
 ## Prevention Best Practices
@@ -351,32 +379,6 @@ graph TB
 - Implement account recovery processes that don't leak information
 - Use HTTPS to encrypt credentials in transit
 - Consider implementing anomaly detection systems
-
-## Technical Implementation Comparison
-
-### Python Implementation
-```
-Language: Python 3.x
-HTTP Library: requests
-HTML Parser: BeautifulSoup4
-Features:
-  - Session management with cookie handling
-  - Automatic retry logic with exponential backoff
-  - Progress tracking with statistics
-  - Clean console output
-```
-
-### Node.js/TypeScript Implementation
-```
-Language: TypeScript/Node.js
-HTTP Library: axios
-HTML Parser: cheerio
-Features:
-  - Type-safe implementation
-  - Modern async/await patterns
-  - Fresh instances for clean state
-  - Equivalent functionality to Python version
-```
 
 ## Ethical Considerations
 
