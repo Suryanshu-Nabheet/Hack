@@ -81,3 +81,129 @@ Both tools are configured to test:
 - Fresh axios instances for each attempt to ensure clean state
 
 Both implementations maintain feature parity and produce equivalent results.
+
+# Brute Force Attack Explained
+
+## Overview
+This diagram illustrates how brute force attacks work - a trial-and-error method used to decode encrypted data by systematically trying all possible combinations.
+
+## Attack Flow Diagram
+
+```mermaid
+graph TD
+    A[🎯 Target System] --> B{Authentication Required}
+    B --> C[🔐 Login Form]
+    
+    C --> D[👤 Attacker]
+    D --> E[📋 Password List/Generator]
+    
+    E --> F{Try Password #1}
+    F -->|❌ Failed| G{Try Password #2}
+    G -->|❌ Failed| H{Try Password #3}
+    H -->|❌ Failed| I[... Continue trying ...]
+    I -->|❌ Failed| J{Try Password #N}
+    J -->|✅ Success!| K[🚪 Access Granted]
+    J -->|❌ Failed| E
+    
+    F -->|✅ Match| K
+    G -->|✅ Match| K
+    H -->|✅ Match| K
+    
+    K --> L[🎉 System Compromised]
+    
+    style A fill:#ff6b6b
+    style D fill:#ffd93d
+    style K fill:#6bcf7f
+    style L fill:#ff6b6b
+    style E fill:#a8daff
+```
+
+## How Brute Force Works
+
+**Brute Force** is a straightforward attack method where an attacker:
+
+1. **Identifies a target** - Usually a login page or encrypted data
+2. **Generates attempts** - Creates passwords using:
+   - Dictionary lists (common passwords)
+   - Character combinations (a-z, 0-9, symbols)
+   - Pattern-based guessing
+3. **Tests systematically** - Tries each possibility one by one
+4. **Continues until success** - Keeps going until the correct password is found
+
+## Attack Process
+
+```mermaid
+sequenceDiagram
+    participant A as Attacker
+    participant S as Target System
+    
+    loop Until Success
+        A->>S: Try Password Attempt
+        alt Incorrect Password
+            S-->>A: ❌ Access Denied
+        else Correct Password
+            S-->>A: ✅ Access Granted
+        end
+    end
+```
+
+## Defense Mechanisms
+
+| Defense | Description | Effectiveness |
+|---------|-------------|---------------|
+| **Rate Limiting** ⏱️ | Slow down login attempts | High |
+| **Account Lockout** 🔒 | Lock accounts after failed attempts | High |
+| **CAPTCHA** 🤖 | Verify human users | Medium-High |
+| **Strong Passwords** 💪 | Use long, complex passwords | Very High |
+| **Multi-Factor Authentication** 📱 | Require additional verification | Very High |
+| **IP Blocking** 🚫 | Block suspicious IP addresses | Medium |
+
+## Time Complexity
+
+| Password Type | Time to Crack |
+|--------------|---------------|
+| 4 characters (lowercase) | Seconds ⚡ |
+| 8 characters (mixed) | Hours/Days 🕐 |
+| 12 characters (complex) | Years 📅 |
+| 16+ characters (complex) | Centuries 🏛️ |
+
+*Note: Times vary based on password complexity and computing power*
+
+## Types of Brute Force Attacks
+
+```mermaid
+mindmap
+  root((Brute Force<br/>Attacks))
+    Simple Brute Force
+      Try all combinations
+      No prior knowledge
+    Dictionary Attack
+      Use common passwords
+      Wordlists
+    Hybrid Attack
+      Dictionary + variations
+      Common substitutions
+    Reverse Brute Force
+      One password
+      Multiple usernames
+    Credential Stuffing
+      Leaked credentials
+      Multiple sites
+```
+
+## Prevention Best Practices
+
+✅ **Use strong, unique passwords** (16+ characters with mixed case, numbers, symbols)  
+✅ **Enable Multi-Factor Authentication (MFA)** on all accounts  
+✅ **Implement account lockout policies** after 3-5 failed attempts  
+✅ **Use rate limiting** to slow down attackers  
+✅ **Monitor for suspicious login patterns**  
+✅ **Educate users** about password security  
+
+---
+
+**⚠️ Educational Purpose Only**
+
+This information is provided for educational and defensive security purposes. Unauthorized access to computer systems is illegal and unethical.
+
+**Remember:** Brute force attacks exploit weak passwords and lack of security measures. Always use strong, unique passwords and enable multi-factor authentication!
